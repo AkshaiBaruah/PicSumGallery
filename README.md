@@ -13,7 +13,6 @@ Email : akshaib10@gmail.com
 <img src="https://github.com/AkshaiBaruah/PicSumGallery/assets/87534228/6719edd7-e73d-40bc-aaef-085db6fe8f37" width="280" height="150">
 <img src="https://github.com/AkshaiBaruah/PicSumGallery/assets/87534228/b4e02a8d-7c2b-4195-a2fd-6bd392ec375b" width="280" height="150">
 
-37)
 
 
 
