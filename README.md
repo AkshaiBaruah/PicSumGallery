@@ -5,7 +5,7 @@ Name : Akshai Baruah
 
 Email : akshaib10@gmail.com
 
-[Apk Link](https://drive.google.com/drive/folders/1tnlMH_4hPNeOBoTO31XamZF9tKgT2uV-?usp=sharing)
+[Apk Link](https://drive.google.com/drive/folders/1tnlMH_4hPNeOBoTO31XamZF9tKgT2uV-?usp=sharing)   Use A Device with at Least Android 8.0 Oreo
 ## Glimpse of the app
 <img src="https://github.com/AkshaiBaruah/PicSumGallery/assets/87534228/98e20db3-feec-4d4f-b878-8fdaef5fa042" width="150" height="280">
 <img src="https://github.com/AkshaiBaruah/PicSumGallery/assets/87534228/3961be47-89dc-4280-9dce-84be8adf2d6d" width="150" height="280">
