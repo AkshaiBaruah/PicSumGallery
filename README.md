@@ -10,6 +10,12 @@ Email : akshaib10@gmail.com
 <img src="https://github.com/AkshaiBaruah/PicSumGallery/assets/87534228/98e20db3-feec-4d4f-b878-8fdaef5fa042" width="150" height="280">
 <img src="https://github.com/AkshaiBaruah/PicSumGallery/assets/87534228/3961be47-89dc-4280-9dce-84be8adf2d6d" width="150" height="280">
 <img src="https://github.com/AkshaiBaruah/PicSumGallery/assets/87534228/7923477f-19ee-4f17-8b3f-64143add0aea" width="150" height="280">
+<img src="https://github.com/AkshaiBaruah/PicSumGallery/assets/87534228/6719edd7-e73d-40bc-aaef-085db6fe8f37" width="280" height="150">
+<img src="https://github.com/AkshaiBaruah/PicSumGallery/assets/87534228/b4e02a8d-7c2b-4195-a2fd-6bd392ec375b" width="280" height="150">
+
+37)
+
+
 
 ## Technologies Used
 ### - Kotlin, Coroutines
