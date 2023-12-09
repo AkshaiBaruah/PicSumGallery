@@ -18,9 +18,10 @@
         android:orientation="vertical">
         <com.jsibbold.zoomage.ZoomageView
             android:id="@+id/slider_image"
-            android:layout_width="wrap_content"
+            android:layout_width="500dp"
             android:layout_height="500dp"
             android:scaleType="centerInside"
+            android:layout_gravity="center_horizontal"
 
             />
         <!--    <ImageView-->
