@@ -28,4 +28,8 @@ Email : akshaib10@gmail.com
 ## Basic Architecture
 ![25](https://github.com/AkshaiBaruah/PicSumGallery/assets/87534228/f24c159b-9c9e-4c39-bbac-ae873c8be847)
 
+## Future Tasks
+* Progress Bar Indicator while Loading Image
+* Adding Sliding Image using ViewPager2 and syncronizing the pagination with the recycler view
+
 
