@@ -13,7 +13,8 @@ Email : akshaib10@gmail.com
 
 ## Technologies Used
 ### - Kotlin, Coroutines
-### - MVVM, Repository Model, Clean Architecture(Domain-data-presentation)(Layered)
+### - MVVM, Repository Model.
+### - Clean Architecture : Domain-data-presentation (Layered)
 ### - Dependency Injection Using Dagger Hilt
 ### - Paging3 Library for Pagination
 ### - Glide Library for ImageLoading
