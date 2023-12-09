@@ -13,8 +13,9 @@
         <com.jsibbold.zoomage.ZoomageView
             android:id="@+id/slider_image"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="600dp"
             android:scaleType="centerInside"
+            android:layout_gravity="center"
 
             />
 <!--    <ImageView-->
@@ -31,6 +32,7 @@
             android:textSize="15sp"
             android:textAlignment="center"
             android:text="Photo By"
+            android:gravity="bottom"
             />
     <TextView
         android:id="@+id/slider_author"
@@ -39,6 +41,7 @@
         android:textAlignment="center"
         android:text="Author"
         android:textSize="50sp"
+        android:gravity="bottom"
         />
 
 
