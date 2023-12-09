@@ -12,7 +12,8 @@ import com.bumptech.glide.Glide
 import com.entity.picsumgallery.R
 import com.entity.picsumgallery.domain.model.ImageItem
 
-class ImagePagingAdapter : PagingDataAdapter<ImageItem, ImagePagingAdapter.ImageViewHolder>(COMPARATOR) {
+class ImagePagingAdapter
+    : PagingDataAdapter<ImageItem, ImagePagingAdapter.ImageViewHolder>(COMPARATOR) {
 
     class ImageViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         val image = itemView.findViewById<ImageView>(R.id.item_image)
@@ -23,15 +24,17 @@ class ImagePagingAdapter : PagingDataAdapter<ImageItem, ImagePagingAdapter.Image
         val currItem = getItem(position)
         if(currItem != null){
             holder.author.text = currItem.author
-            if(currItem.download_url != null){
-                Glide.with(holder.itemView.context).load(currItem.download_url).into(holder.image)
-            }
+            Glide.with(holder.itemView.context)
+                .load(currItem.download_url)
+                .into(holder.image)
+
         }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.image_item , parent, false)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.image_item , parent, false)
         return ImageViewHolder(view)
     }
 
@@ -41,7 +44,10 @@ class ImagePagingAdapter : PagingDataAdapter<ImageItem, ImagePagingAdapter.Image
                 return oldItem.id == newItem.id
             }
 
-            override fun areContentsTheSame(oldItem: ImageItem, newItem: ImageItem): Boolean {
+            override fun areContentsTheSame(
+                oldItem: ImageItem,
+                newItem: ImageItem
+            ): Boolean {
                 return oldItem == newItem
             }
 

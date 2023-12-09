@@ -9,14 +9,18 @@ class ImagePagingSource @Inject constructor(
     private val imageApi : ImageApi
 ) : PagingSource<Int, ImageItem>() {
 
-    override fun getRefreshKey(state: PagingState<Int, ImageItem>): Int? {
+    override fun getRefreshKey(
+        state: PagingState<Int, ImageItem>
+    ): Int? {
         return state.anchorPosition?.let {
             state.closestPageToPosition(it)?.prevKey?.plus(1)
                 ?:state.closestPageToPosition(it)?.nextKey?.minus(1)
         }
     }
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, ImageItem> {
+    override suspend fun load(
+        params: LoadParams<Int>
+    ): LoadResult<Int, ImageItem> {
 
         return try{
             val page = params.key ?: 1
