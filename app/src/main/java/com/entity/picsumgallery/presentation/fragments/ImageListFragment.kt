@@ -1,11 +1,12 @@
 package com.entity.picsumgallery.presentation.fragments
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -54,7 +55,14 @@ class ImageListFragment : Fragment() {
 //        }
 //    }
     private fun initView() {
-        val _layoutManager = GridLayoutManager(requireContext(), 3)
+    val span : Int
+    val currentOrientation = resources.configuration.orientation
+    if (currentOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+        span = 5
+    } else {
+        span = 3
+    }
+        val _layoutManager = GridLayoutManager(requireContext(), span)
         madapter = ImagePagingAdapter({
             moveToImageSlider(it)
         })
