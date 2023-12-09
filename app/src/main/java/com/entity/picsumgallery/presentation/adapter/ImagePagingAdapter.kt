@@ -1,7 +1,9 @@
 package com.entity.picsumgallery.presentation.adapter
 
+import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
@@ -12,16 +14,26 @@ import com.bumptech.glide.Glide
 import com.entity.picsumgallery.R
 import com.entity.picsumgallery.domain.model.ImageItem
 
-class ImagePagingAdapter
+class ImagePagingAdapter(
+    private val onItemClicked : (item : ImageItem) -> Unit
+)
     : PagingDataAdapter<ImageItem, ImagePagingAdapter.ImageViewHolder>(COMPARATOR) {
 
-    class ImageViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
+    inner class ImageViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         val image = itemView.findViewById<ImageView>(R.id.item_image)
         val author = itemView.findViewById<TextView>(R.id.item_text)
+//        init {
+//            itemView.setOnClickListener {
+//                onItemClickListener
+//            }
+//        }
     }
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
         val currItem = getItem(position)
+        holder.itemView.setOnClickListener {
+            onItemClicked(getItem(position)!!)
+        }
         if(currItem != null){
             holder.author.text = currItem.author
             Glide.with(holder.itemView.context)
@@ -35,7 +47,8 @@ class ImagePagingAdapter
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.image_item , parent, false)
-        return ImageViewHolder(view)
+        val holder = ImageViewHolder(view)
+        return holder
     }
 
     companion object{
@@ -53,5 +66,7 @@ class ImagePagingAdapter
 
         }
     }
+
+
 }
 

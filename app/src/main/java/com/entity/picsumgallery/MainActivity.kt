@@ -35,11 +35,21 @@ class MainActivity : AppCompatActivity() {
 //            adapter.submitData(lifecycle , it)
 //        })
 
+        setSupportActionBar(findViewById(R.id.toolbar))
+
         imageListFragment = ImageListFragment()
         imageSliderFragment = ImageSliderFragment()
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.main_fragment_container , imageListFragment)
             commit()
         }
+
+    }
+
+    fun navigateToSlider() {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.main_fragment_container, imageSliderFragment)
+        transaction.addToBackStack(null) // Optional: Adds the transaction to the back stack
+        transaction.commit()
     }
 }
