@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.fragments.ImageSliderFragment">
+    tools:context=".presentation.fragments.ImageSliderFragment"
+    android:background="@color/cardview_light_background"
+    android:backgroundTint="@color/cardview_light_background">
 
 <ScrollView
     android:layout_width="match_parent"
@@ -17,7 +19,7 @@
         <com.jsibbold.zoomage.ZoomageView
             android:id="@+id/slider_image"
             android:layout_width="wrap_content"
-            android:layout_height="600dp"
+            android:layout_height="500dp"
             android:scaleType="centerInside"
 
             />

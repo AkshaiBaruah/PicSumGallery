@@ -20,12 +20,27 @@ class ImageSliderFragment : Fragment() {
     private val binding: FragmentImageSliderBinding
         get() = _binding!!
 
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        retainInstance = true
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentImageSliderBinding.inflate(inflater, container, false)
-        return _binding?.root
+        val view = binding.root
+
+        // Adjust layout parameters to match the parent's size
+        view.layoutParams = ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.MATCH_PARENT
+        )
+
+        // Your additional setup code here
+
+        return view
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

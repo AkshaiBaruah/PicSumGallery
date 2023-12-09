@@ -2,6 +2,7 @@ package com.entity.picsumgallery
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -23,26 +24,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //mainrv = findViewById(R.id.mainrv)
-        //adapter = ImagePagingAdapter()
-        //mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-
-//        mainrv.layoutManager = GridLayoutManager(this , 3)
-//        mainrv.setHasFixedSize(true)
-//        mainrv.adapter = adapter
-
-//        mainViewModel.images.observe(this , Observer {
-//            adapter.submitData(lifecycle , it)
-//        })
-
         setSupportActionBar(findViewById(R.id.toolbar))
 
         imageListFragment = ImageListFragment()
         imageSliderFragment = ImageSliderFragment()
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.main_fragment_container , imageListFragment)
-            commit()
+
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.main_fragment_container, imageListFragment)
+                .addToBackStack(null)
+                .commit()
         }
+//        supportFragmentManager.beginTransaction().apply {
+//            replace(R.id.main_fragment_container , imageListFragment)
+//                .addToBackStack(null)
+//                .commit()
+//        }
 
     }
 

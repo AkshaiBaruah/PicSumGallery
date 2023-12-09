@@ -2,6 +2,7 @@ package com.entity.picsumgallery.presentation.fragments
 
 import android.content.res.Configuration
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -27,6 +28,10 @@ class ImageListFragment : Fragment() {
     private lateinit var madapter : ImagePagingAdapter
     private lateinit var imageSliderFragment: ImageSliderFragment
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        retainInstance = true
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -97,8 +102,18 @@ class ImageListFragment : Fragment() {
         }
         imageSliderFragment.arguments = bundle
         requireActivity().supportFragmentManager.beginTransaction()
-            .replace(R.id.main_fragment_container , imageSliderFragment)
-            .addToBackStack(null)
+            .add(R.id.main_fragment_container , imageSliderFragment)
+            .addToBackStack("frag")
             .commit()
+    }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putParcelable("recycler_state", binding.imageListRv.layoutManager?.onSaveInstanceState())
+    }
+
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        super.onViewStateRestored(savedInstanceState)
+        val savedRecyclerState = savedInstanceState?.getParcelable<Parcelable>("recycler_state")
+        binding.imageListRv.layoutManager?.onRestoreInstanceState(savedRecyclerState)
     }
 }
