@@ -12,8 +12,8 @@ Email : akshaib10@gmail.com
 <img src="https://github.com/AkshaiBaruah/PicSumGallery/assets/87534228/7923477f-19ee-4f17-8b3f-64143add0aea" width="150" height="280">
 
 ## Technologies Used
-### - Kotin, Coroutines
-### - MVVM and Repository Model
+### - Kotlin, Coroutines
+### - MVVM, Repository Model, Clean Architecture(Domain-data-presentation)(Layered)
 ### - Dependency Injection Using Dagger Hilt
 ### - Paging3 Library for Pagination
 ### - Glide Library for ImageLoading
